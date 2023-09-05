@@ -1,0 +1,28 @@
+project baru di local
+- create repo di gh
+- git clone <link>
+
+add push commit
+- git add .
+- git commit -m "comment"
+- git push
+
+branch
+- git branch (cek list branch)
+- git checkout <name> (pindah branch)
+- git switch -c <name> (new branch with all uncommited change)
+- git branch --delete <name>
+
+reset
+- git reset HEAD --hard (undo all to last commit)
+
+reset to remote branch:
+git fetch origin
+git reset --hard origin
+
+log
+git log --oneline
+
+PR:
+- git push -u origin <branch name> (upload local branch to remote)
+- create pr di github

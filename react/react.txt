@@ -1,0 +1,6 @@
+- create react + tailwind project
+npx create-react-app nama
+cd nama
+npm install -D tailwindcss
+npx tailwindcss init
+
