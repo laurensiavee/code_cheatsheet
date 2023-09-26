@@ -17,12 +17,27 @@ reset
 - git reset HEAD --hard (undo all to last commit)
 
 reset to remote branch:
-git fetch origin
-git reset --hard origin
+- git fetch origin
+- git reset --hard origin
 
 log
-git log --oneline
+- git log --oneline
 
 PR:
 - git push -u origin <branch name> (upload local branch to remote)
 - create pr di github
+
+git stash - pull rebase
+- git add .
+- git stash
+- git pull rebase (sync)
+- git stash apply
+- git add .
+- git commit -m "tes"
+- git push
+
+cred
+- git config -global user.name testname
+- git config -global user.email testname
+- git config -global user.passwod testname
+- git config --global --unset user.name
