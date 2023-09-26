@@ -3,4 +3,6 @@
 this repo used to store basic language syntax for personal use.
 
 include:
-- sql
+- git
+- javascript
+- react (command)
