@@ -1,0 +1,31 @@
+-- run existing project
+    composer install
+    php artisan serve
+    create db (phpmyadmin, config: .env)
+    php artisan migrate
+    php artisan db:seed
+    //php artisan migrate:fresh+migrate+seed
+    php artisan serve
+
+-- create new, dkk
+    composer create-project laravel/laravel lec1
+    composer create-project --prefer-dist laravel/laravel coba1
+    composer create-project --prefer-dist laravel/laravel="8.0" coba1
+    composer require maatwebsite/excel
+
+    php artisan serve (dlm folder project) -> run server 
+    php artisan migrate (set dlu env ke db di php myAdmin)
+    php artisan make:seeder MovieSeeder (buat seeder (dlm folder db td dalem db yg ud dibuat)
+    php artisan db:seed
+    php artisan make:model Product -c (close dlu serve nya pke ctrl+c)
+
+-- MVC
+views = views -> blade (frontend) html	->blade
+	default -> welcome.blade.php (nama harus .blade.php)
+		buat baru -> layout.blade.php
+
+models = app->models (model yg dibuat pas php artisan model itu
+controller = http->controller (yg sesuai nama model, Productconroller)
+
+routes -> web.php
+buat css/js sndiri-> buat folder css/assets di public, add ke href

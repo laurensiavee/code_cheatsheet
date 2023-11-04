@@ -1,0 +1,217 @@
+java
+
+///// template
+    package packName //klo ad
+    public class Main{ //nama project
+        public static void main(String [] args){
+        //main method
+        }
+    }
+
+///// var
+    String = "JHloo"
+    char
+    bytr short int long
+    float double
+    boolean
+
+///// convert type
+    sysout((int)3.14);
+    string to int int a = Integer.parseInt("8");
+    parsedouble
+
+///// string mrthod
+    stringname.method.
+    length charAt(index) indexOf("lo"); substring(2), substring (9,5) str end before id ke
+
+///// operator + - * / %
+    int op int = iny
+    int op dob = dob
+
+///// Math
+    pow sqrt round
+    Math.method()
+
+
+///// i/o
+    Sysout
+
+    scan:
+    import java util sca
+    Scanner scan = new Scanner(System.in);
+    string user = scan.nextLinr() , next int, dob, dll
+    hasNextLine, doble dkk
+
+///// arr
+    int [] luckNum = {2,3};
+    int [] lucknum = new int[9];
+    luvknum[8]
+
+    2d:
+    int [][] numgrid { {4,5}, {5,6} };
+    iny [][] nymgrid = new int [2][3];
+
+    hacks: string to char arr:
+    String text = "test test";
+    char[] chars = text.toCharArray();
+
+///// arrlist
+    java util arrlist
+    ArrayList<String> friends = new ArrayList<String>();
+    friends.add("lip")l
+    method:
+    .add();
+    .remove();
+    .toString();
+    .get(index);
+    .contains("lip");
+    .size(); banyak ny
+
+///// method
+    modifier = public
+    public static void name(){} //biasa gosa pke static
+
+///// if else
+    || && ! > < == <= >=
+    String.equals();
+    switch case break
+
+///// loop
+    while
+    do while
+    for
+    print arr fast:
+    int luckNums[] = {1,2,3};
+    for(int luckNum : luckyNums){}
+
+///// exception handling
+    try{ //code} catch(Exception e){//code}
+    //note exeception e biasanya detail, exception e kan general
+    //catch bs 2
+    throw new Aritmethic exception ("cant add num");
+    //throw itu massage nya gtu
+
+///// ///// ///// 
+///// OOP
+///// ///// ///// 
+
+///// class = costum data type, basically.
+    class Book{
+        public int a
+        public static int d = l;
+        //static = attribute belong to class, bkn obj
+        public void readBook(){
+            sysout("Reading "+this.title);
+            //this = current class obj's var
+        }
+    }
+
+///// obj
+    create
+    Book book1 = newBook()l
+    book1.title = "hary";
+    book.readBook();
+    panggil static lewat class bkn obj:
+    sysout(Book.b);
+
+///// constructor
+    //biasa
+    this.title - title
+
+
+///// setters getters
+    access modifier
+    set to private
+    setters getters biasa
+
+///// inheritence
+    class ItalianChef extends Chef{
+        @Override
+        public void makeSpecial(){
+        sysout pizza;
+        }
+    }
+
+///// counstructor w/ inheritance
+    class Chef{
+        public String name;
+        public int age;
+    }
+    class ItalianChef extends Chef{
+        public String origin;
+        //origin gaada di class
+        //constructor
+        //public ItalianChef(String name,int age, String origin){
+            super(name,age) //get ke parent
+            this.origin = origin;	
+        }
+    }
+                *class huruf depan capital
+
+///// abstract class
+    //class gbs dipake kek biasa, cm buat jd parent
+    abstract class Vehicle{
+        //abstract method
+        public abstract void move(); //not implemeted
+    }
+    //yg extends bs implemen unimplemented parent method. //polymorph
+
+    //interface = class khusus isinya abstract method
+
+///// polymorphism
+    interface Animal{
+        public void speak();
+    }
+    //implements = harus pke smua method yg di parent class nya
+    class cat implements Animal{}
+
+///// array obj of class
+    di main:
+    Animal [] animals = {
+        new Dog(),
+        new Cat();
+    }
+    for(Animal animal : animals){
+        animal.speak();
+    }
+
+///// static method:
+    method yg bs dipake tnpa buat objek kyk Math
+    bs jg variable jd misal int a tinggal Test.a langsung di main
+    class Test isi static var a
+    //hacks
+    buat class khusus buat static method n var
+    cara panggil method/var pke className.var/methodname
+
+///// generics method:
+method yg parameter bs take any type of data n run the method biasa aj
+    //generic method\
+    //katanya biasanya T bkn E
+    public static <E> void printMe(E[] x){
+        for(E b: x) sysout;
+    }
+    return generics:
+    //only obj yg inherit dr comparable class bs dipake
+    public static <E extends Comparable<E>> E max(E a, E b, E c);
+    // <E extends Comparable<E>> acc generics data
+    //E yg sebelum max( itu return type), generics data
+    { 	E m = a;
+        return m;
+    }
+
+///// generics class/interface:
+    public class GenStack<E> {
+        private java.util.ArrayList<E> list = new java.util.ArrayList<>();
+    }
+    di main:
+    GenStack<String> stack1 = new GenStack <>();
+    GenStack<Integer> stack2 = new GenStack <>();
+
+    eclipse alt shift r generate setter getter
+
+///// upcast
+    Segitiga st = new segitiga
+    s = (shape) st;
+    list.add(st)
+
+    persegi p = (persegi) shape

@@ -1,0 +1,68 @@
+C 
+
+///// template
+	#include<stdio.h>
+
+	int main(){
+
+	return 0;
+	}
+
+///// lib
+	#include<stdio.h>	library c i/o
+	#include<string.h> 	string op	-> strlen(s), strcmp(s1,s2) (if ret 0 same), strcpy(s1,s2) (s1:=s2)
+	#include<stdlib.h>	malloc (linked list)
+	#include<math.h>	mat op
+
+///// variable
+	int a;
+
+///// Array/Data Struct
+	int A[9];
+	char str[10]; di C string bukan var tp array of char
+	struct (part2)
+
+///// basic op
+	- print
+		printf("Hello %d", a);
+			indention: -4%d -> left, 4 space
+			%d %c %f %lf 
+			%4f -> koma 4 diblakang
+	- scan
+		scanf("%d",&a);
+		scanf(" %[^\n]s",str); //str gapake &, bug, kasih space dapan %, abis scan getchar()
+			getchar() jgn lupa
+	- if
+		if(){} 
+		else if(){}
+		else{}
+	- switch case
+		switch(//variable){
+			case //var1	:
+				break;	}
+	- for
+		for(int i=1; i<n; i++){}
+	- while
+		while(){}
+	- do while
+		do{} while();
+
+///// function
+	int name (int old_a){
+		return a;
+	}
+	returnType functionName(parameter){
+		return var;
+	}
+
+	//gaada return type = void
+	//void = gaada return 
+	
+    calling function:
+	int a = name(a);
+
+///// recursive function (call own func inside)
+
+	int fun(int a){
+		if() a = fun(a);
+	}

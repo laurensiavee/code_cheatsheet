@@ -1,0 +1,272 @@
+C#
+
+///// template
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Task;
+
+    namespace Giraffe{ //project name
+        class Program{ 
+            static void Main(string[] args){
+                Console.WriteLine("Hello World!"+charName);
+                    Console.ReadLine();
+            }
+        }
+    }
+    
+///// print
+	Console.WriteLine("Hello World");
+	Console.Writeline(30):
+	Console.Writeline(false):
+	Console.ReadLine(); //harus ad klo ga abis exe ilang, biar layar ga tutup
+		//"pause screen till we enter smt"4+
+
+///// print w/ var
+	Console.WriteLine("Hello" + charName + "lol");
+
+///// variables:
+    string charName = "John";
+    string wow = "LALA"+"Lol";
+    int charAge;
+    char grade = 'A';
+    float, double, decimal (decimal plg detail)
+    bool 
+    35.00
+
+///// enter
+    enter \n
+    " \"
+
+///// function 
+    strlen charName.Length
+    caps charName.ToUpper() / ToLower
+    contains charName.Contains("Mr.") ->return bool
+    char ke phrase[0]
+    index of charName.IndexOf("Halo"), halo start at apa, baca yg paling duluan. klo -1 gaada 
+    charName.Substring(8) ambil dr index 8 or charName.Substring(8,3), len nya 3
+
+///// math 
+    + - * / % ++ --
+    op = operator y
+    int op int = int makannya int/int = int
+    int op double = double
+    ADVANCE:
+    Math.Abs() absolute
+    Math.Pow(3,2)= 9
+    Math.Sqrt()
+    Math.Max(a,b) , Min
+    Math.Round(double) ->round doble ke int
+
+///// I/O
+    Console.Write();
+    Console.WriteLine();
+    string name = Console.ReadLine();
+    int num1 = Convert.ToInt32(Console.ReadLine());
+
+///// convert
+    int num = Covert.ToInt32("45");
+    ToDouble
+
+///// array
+    int [] luckNum = { 4,8,16 };
+    string[] friends = new string[10]; //arr w size
+    2d int[,] numGrid = { {2,3}, {1,2} };
+        numGrid[0,0] row 0 col 0
+        int[,] myArray = new int[1,2] size row 1 size col 2
+    3d int[,,]
+
+///// method
+    static void SayHi(){
+    }
+    static void double[] lol{} -> return array of double
+    only main method yg executed
+
+///// op
+    || && ! == !=
+
+///// switch
+    switch(){
+        case 1:
+            break;
+        default:
+            break;
+    }
+
+///// loop 
+    while(){}
+    do{}while();
+    for(int i=0;i<n;i++){}
+
+///// exeception handling 
+    try{
+        //code
+    }
+    catch(Exception e){
+        Console.WrireLine(e.Message)
+    }
+
+    try{
+        //code ny
+    }
+    catch(DevideByZeroException e){ //only catch /0 error
+        Console.WrireLine(e.Message)
+        // e messaage itu ngasi tau error dmn
+    }
+    catch(FormatException e){ //catch error beda input format (int+
+    }
+    finally{//code}
+    //selalu di execute no matter what
+
+////////////////////////////////////
+////////////////////////////////////
+////// class n obj
+*name must be capital
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Task;
+
+namespace Giraffe{ //project name
+	class Book{ 
+		public string title;
+		public string author;
+		public int pages;
+	}
+}
+
+di main:
+	Book book1 = new Book();
+	book1.title = "Harry Potter";
+
+constructor
+//special method dlm class called klo kita create obj class itu
+//sering dpake buat pass parameter
+
+namespace Giraffe{ //project name
+	class Book{ 
+		public string title;
+		public string author;
+		public int pages;
+
+		//constructors:
+		public Book(string atitle, string aauthor, string apages){ //namany sama kyk classny
+			print creating book
+			title = atitle;
+			//klo nameny same pke this
+		}
+		//constructor lain (polymorph)
+		public Book(){
+		}
+	}
+}
+di obj:
+	Book book1 = new Book("heri","jk",400);
+	renew: book1.title = "harry";
+	////or
+	Book book2 = new Book();
+
+class method:
+	book1.HasHonors();
+
+getters setters, encapsulation
+namespace Giraffe{ //project name
+	class Book{ 
+		private string title;
+		private string author;
+		private int Pages; //call method setters Pages
+	}
+	//constructors:
+	public Book(string atitle, string aauthor, string apages){ //namany sama kyk classny
+		print creating book
+		title = atitle;
+		//klo nameny same pke this
+	}
+	//constructor lain (polymorph)
+	public Book(){
+	}
+	public string Pages{
+		get{ return pages }
+		set{
+			//validation
+			if(value>-1) pages = value;
+			else pages = value*-1
+		}
+	}
+}
+di code:
+book1.Pages (method ny Pages)
+
+static class attributes
+//var/attributes milik class bkn objek
+public static int BookCount
+jadi misal objek gabisa pake, dipake hrs dr class;
+di class:
+namespace Giraffe{ //project name
+	class Book{ 
+		private string title;
+		private string author;
+		private int Pages; //call method setters Pages
+		public static int BookCount = 0;
+	}
+	//constructors:
+	public Book(string atitle, string aauthor, string apages){ //namany sama kyk classny
+		print creating book
+		title = atitle;
+		//klo nameny same pke this
+		BookCount++; //inget tiap buat obj constructor dipanggil
+		//jadi debest tarok counter di constructor
+	}
+	//constructor lain (polymorph)
+	public Book(){
+		BookCount++;
+	}
+	public string Pages{
+		get{ return pages }
+		set{
+			//validation
+			if(value>-1) pages = value;
+			else pages = value*-1
+		}
+	}
+}
+misal di code:
+print Book.BookCount;
+
+static method in classes
+method yg belong to class nya bkn obj.
+jd bs pke function method nya tanpa buat obj.
+//intinya buat method kyk Math.sqrt()
+//guna bet buat buat class khusus static function, kyk math class., klo samsek gamau buat obj pke static class
+
+namespace Giraffe{ //project name
+	class UsefulTools{
+		public static void SayHi(string name){
+			Console.WriteLine("Hello"+name);
+		}
+	}
+}
+di code:
+UsefulTools.SayHi();
+
+static class:
+class yg gabisa dibuat objek
+kyk Math class.
+
+inheritance:
+class Chef{
+	public void MakeSalad() Console.WriteLine("Salad");
+	public virtual void MakeSpecial() Console.WriteLine("bbq ribs");
+	//virtual biar bs di override
+}
+class Italian Chef : Chef {
+	public void MakePasta() Console.WriteLine("Pasta");
+	public override void MakeSpecial() Console.WriteLine("Pizza");
+}
+
+class ItalianChef  : Chef (italian chef inherit dr chef)
+
+override:

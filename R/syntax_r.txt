@@ -1,0 +1,449 @@
+console: execute R command
+    ex type: 1+2
+    return 3
+
+# comment
+
+variables
+    height <- 2
+        height 
+        return 2
+
+workspace: place variables list
+
+ls()
+    return all var
+
+    area <- height * width
+
+R script (extension .R, text file with r commands)
+
+#######################
+basic data types
+class() : reveal type
+
+logical
+    TRUE FALSE T F NA
+
+numeric
+    2   2.5 
+    2  numeric 
+    2L int (klo di class() integer)
+
+    is.numeric()
+    is.integer()
+
+character
+    "str"
+
+other atomic type 
+    double      : higher precision num 
+    complex     : complex num
+    raw         : store raw bytes
+
+###
+coercion change type
+    as.numeric()
+    as.numeric("4.4")
+    as.character()
+    as.integer()
+
+
+#######################
+vector
+sequence data element of same basic dtata type char nu logical
+create: c()
+suit <- c("heart", "spade")
+is.vector()
+remain <- (11,12)
+
+ngelabel remain:
+names(remain) <- suit
+
+atau:
+remain <- (heart=11, spade=12)
+remain <- ("heart"=11, "spade"=12)
+
+compact display:
+str(remain) 
+
+single value = vector
+(kek var biasa a<-5 itu jg vector), vector len 1
+
+vector is homogeneus (same type)
+automatic coercion  
+
+drawn_rank = (1, 2, "q")
+jadi nya drawn rank semua type character
+
+
+#######################
+vector calculus
+
+element-wise
+    earning <- c(10,20,10)
+    earning * 3
+    hasil = (30, 60, 30)
+
+    expense <- c(1,2,3)
+    earning - expense
+    hasil = (9,18,7)
+    
+    PENTING
+    vector multi sm div element wise juga!!!
+
+    bank <- earning - expense
+    sum(bank)
+    9 + 18 + 7
+    34
+
+    earning > expense
+    TRUE TRUE TRUE 
+
+
+#######################
+subseting vector
+    
+    remain <- (heart=11, spade=12)
+    remain[1] -> elemen 1 -> heart(label) 11
+
+    sama:
+    remain["heart"] 
+
+    select indices/subset, urutan ngaruh
+    remain_black <- remain[c(1, 4)]
+    remain_black <- remain[c(4, 1)] (beda jd nya)
+    
+    remain[c("heart", "spade")]
+
+    all but index 1 are returned
+    remain[-1]
+
+    select kecuali id:
+    remain[-c(1,2)]
+
+        gabisa
+        remain[-"spade"]
+
+    subset pke logical vector
+
+        logical vector size sm kyk yg mau di subset
+        remain[c(F,T,F,T)]
+        (cuma return yg true)
+
+        klo vector logical lebih pendek dr yg di pilih:
+        di repeat
+        jd klo pjg 5 
+        T F , jd T F T F T 
+
+
+#######################
+matrices
+vector = 1d, matrix = 2d, rows col 
+
+create
+    matrix()
+    // values 1 ke 6, 2x3
+    matrix(1:6, nrow = 2)
+         [,1] [,2] [,3]
+    [,1]   1    3    5
+    [,2]   2    4    6
+    
+    matrix(1:6, ncol = 3)
+         [,1] [,2] [,3]
+    [,1]   1    3    5
+    [,2]   2    4    6
+
+    * di fill nya by col, full 1 row dulu
+    klo mau per row isi full dlu :
+    matrix(1:6, nrow = 2, byrow=TRUE)
+         [,1] [,2] [,3]
+    [,1]   1    2    3
+    [,2]   4    5    6
+
+    klo size input ga sesuai di repeat value nya
+    matrix(1:3, nrow = 2, ncol = 3)
+         [,1] [,2] [,3]
+    [,1]   1    3    2
+    [,2]   2    1    3
+
+
+cbind()
+    cbind(1:3, 1:3)
+         [,1] [,2]
+    [,1]   1    1 
+    [,2]   2    2
+    [,3]   3    3
+
+rbind()
+    rbind(1:3, 1:3)
+         [,1] [,2] [,3]
+    [,1]   1    2    3
+    [,2]   1    2    3
+
+kombi:
+
+    m <- matrix(1:6, byrow=TRUE, nrow=2)
+        tambah row:
+    rbind(m, 7:9)
+         [,1] [,2] [,3]
+    [,1]   1    2    3
+    [,2]   4    5    6
+    [,3]   7    8    9
+
+    cbind(m, c(10,11))
+         [,1] [,2] [,3] [,4]
+    [,1]   1    2    3   10
+    [,2]   4    5    6   11
+
+naming matrix (label), gantu yg [,1] bla itu
+    m <- matrix(1:6, byrow=TRUE, nrow=2)
+    rownames(m) <- c("row1", "row2")
+    colnames(m)
+
+    pas buat sekalian:
+     m <- matrix(1:6, byrow=TRUE, nrow=2, 
+                dimnames=list(c("row1", "row2"), 
+                c("col1", "col2", "col3)))
+
+coercion auto jg
+
+#######################
+
+subsetting matrix
+
+mat m 
+row, col 
+m[1,3]
+
+row 3
+m[3,]
+
+col 3 
+m[,3] hasil vec row 3  (1d)
+
+m[4] = 7
+3  7
+4
+8
+
+subset by name 
+
+#######################
+matrix arithmetic
+colSums(), rowSums()
+element wise 
+
+multipli jg element wise
+
+#######################
+factors 
+categorical variables
+
+blood_factor <- factor(blood) sorted alpahetically
+str(blood_factor)
+
+klo gamau sort bs pke levels 
+factor(blood, levels="nsjd")
+
+rename 2x level, pertama buat sort ke2 buat rename
+
+nominal vs ordinal
+o ab b a 
+s m l xl -> ordered = TRUE (ngeset, kd s < m)
+
+#######################
+list, diff r obj 
+no coercion 
+gbs calculus 
+
+list()
+
+song <- list (title="lala",
+                duration=10.
+                track=5)
+
+list in list 
+
+#######################
+subset and extended list 
+[  bs [[
+    [idx] title = "nama"
+    [[idx]] "nama"
+
+
+$ and extending
+song$duration 
+
+#######################
+df 
+
+data.frame()
+
+name <-c("ann", "pete")
+
+df <- data.frame(name, Age=age, child)
+str(df)
+
+
+#######################
+subset extend sort df 
+[ ] from matrices
+[[]] $ from list
+
+extend
+height <- c(10,11)
+people$height <- height 
+or 
+people[["height"]] <- height
+
+cbind rbind 
+
+sort 
+sort(people$age) 
+
+ranks <- order(people$age)
+ranks 
+
+people[order(people$age, decreasing=TRUE), ]
+
+#######################
+
+basic graphic
+
+package: ggplot2, ggvis, lattice
+
+plot()
+    generic
+    diff input = diff plot
+    vector, liknear model, kernel densities
+
+    plot(countries$continent)
+        categorical
+        numerical 
+        2x numerical (vs gtu) 
+        2x cat 
+
+hist()
+    histogram
+    distribution
+    bin all func 
+
+barplot()
+boxplot()
+pairs()
+
+#######################
+
+costumizing plot 
+    plot(mercury$temperature, mercury$pressure,
+    xlab = "Temperature", #horizontal axis label
+    ylab = "Pressure",
+    main = "t vs p mercury",
+    type = "o", l           l=line  plot typr
+    col = "orange"
+    col.main = "darkgray", col title/main
+    cex.axis = 1.5 , label size 
+    lty = 5, line type (dash dll )
+    pch = 4 (plot symbol)
+    )
+
+par()
+    ?par    all parameter
+    par(col="n;ie)
+
+
+
+#######################
+multiple plots 
+
+mfrow parameter in par()
+
+kek buat grid 2x2
+par(mfrow = c(2,2))
+plot (shop$comp, shop$sales) #plot 1 kiri atas
+
+mfcol beda urutan aja
+
+reset grid jd 1x1 
+par(mfrow = c(1,1))
+
+grid <- matrix(c(1,1,2,3), nrow=2, ncol=2, byrow=TRUE)
+
+    grid    1 1 
+            2 3
+
+layout (grid)
+plot 3, sesuai nomor di grid (jd yg 1 panjang)
+
+reset: 
+layout(1)
+par(mfcol = c(1,1))
+
+klo gamau reset old_par <- par
+par(old_par)
+
+stack graphical
+lm_sales = plot pertama 
+abline(coef(lm_sales), lwd=2)  layer
+
+    point() segments() line() text()
+
+
+#######################
+comditional statement 
+
+if 
+    if(){
+
+    } else if{
+    
+    } else{
+
+    }
+
+
+
+
+#######################
+logical operator and vec
+& | !
+!is.numeric(3)
+
+c(T,T,F) & c(T,F,F)
+T,F,F
+
+& vs &&
+c(T,T,F) & c(T,F,F)
+T
+(CUMA FIRST ELEMENT )
+
+| vs ||
+
+
+#######################
+relational operator
+== !=
+"hello" == "goodbye" -> FALSE 
+
+< > <= >=
+
+
+#######################
+
+popular package
+dplyr tidyr stringr lubridate httr ggvis ggplot2 shiny rio rmarkdown
+semua = pacman 
+
+install.packages("pacman")
+require(pacman)
+or 
+library(pacman)
+
+pacman::p_load(pacman, dplyr,.......)
+
+
+
+
+#######################
+

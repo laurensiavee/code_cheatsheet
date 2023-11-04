@@ -1,0 +1,85 @@
+Swing GUI toolkit
+
+http://zetcode.com/tutorials/javagamestutorial/basics/
+
+JAVA Swing
+https://www.guru99.com/java-swing-gui.html
+
+Container Class
+class yang punya component 
+buat gui, butuh at least 1 container obhect
+
+container type:
+Panel (JComponent)
+//organize componrnt ke window
+
+Frame (JFrame)
+// window, yg ad title &icon
+JFrame frame = new JFrame("Judul Windows");
+frame.method
+
+Dialog (JDialog)
+// pop out window
+
+import javax.swing.*;
+
+//Usually you will require both swing and awt packages
+// even if you are working with just swings.
+
+BASIC fr Alex
+
+#NORMAL FORMAT (create panel)
+
+class GUI (class main) = object 
+
+public class GUI{
+	
+	public GUI(){
+		//constructor class nya makannya di main new GUI
+	}
+	
+	public static void main (String[] args){
+		new GUI(); //jd kek obj class nya
+	}
+}
+
+JFrame frame = new JFrame(); //windows
+JPanel panel = new JPanel(); //stuff inside window / layout gtu
+
+panel.setBorder(border); //border obj error krn gabs buat obj border
+	jadi:
+panel.setBorder(BorderFactory.createEmptyBorder());
+
+panel.setLayout(mgr)
+panel.setLayout(new GridLayout(0,1));
+
+frame.add(panel, BorderLayout.CENTER);
+	//add panel
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	//what it do when close
+frame.setTitle("Our GUI");
+	//title windows
+frame.pack();
+	//set windows to match certain size
+frame.setVisible(true);
+	//visibility
+
+#button
+
+JButton button = new JButton("Click Me");
+JLabel label = new JLable("Number of clicks: 0");
+
+int count = 0;
+button.addActionListener(this);
+	//this = this class
+	//addlistemer hrs implements ActionListener. which nambah method:
+	public void actionPerformed(ActionEvent e){
+		count++;
+		label.setText("Num of clicks: "+count);	
+	}
+
+panel.add(button);
+panel.add(label);
+
+hacks: klo mau buat object di class, bkn di method(main dkk), buatnya tinggal
+JLabel label, bs dikasi private dkk
