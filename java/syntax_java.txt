@@ -1,0 +1,181 @@
+java
+
+///// template
+    public class Nama{
+        public static void main(String [] args){
+
+
+
+        }
+    }
+
+///// print
+    System.out.println("Hello");
+    System.out.print("Hello");
+    System.out.print("Hello %s\n",name);
+
+///// var
+    String name="bla";
+    char apa='A';
+    byte short int long = 1
+    float double = 3.5
+
+    boolean yes;
+    yes=true;
+    %b
+
+
+///// print convert
+    System.out.println((int)"3.14); 
+
+///// convert type
+    int dariString = Integer.parseInt("50");
+
+///// stringfunc/stringclass:
+    String greeting="Hello";
+
+///// print func
+    System.out.println(greeting.length()); //strlen
+    System.out.println(greeting.charAt(0)); //char@string ke-
+    System.out.println(greeting.indexOf("llo")); //string itu mulai dr index ke brp (2)
+    System.out.println(greeting.indexOf("z")); //invalid/gaada = -1
+    System.out.println(greeting.substring(2)); //ambil string muilai index dia smpe akhir (llo)
+    System.out.println(greeting.substring(1,3)); start index @1, end @2 (yg index ke 3 ga masuk) (el)
+
+///// mathfunc
+    int/double=double
+    int/int=int
+
+    mathfunc/mathclass:
+    System.out.println(Math.pow(2,3)); 2^3
+    System.out.println(Math.sqrt(144)); 12
+    System.out.println(Math.round(2.7)); 3 rule nya ?
+
+///// scan
+    import java.util.Scanner; //tarok kyk library 
+    Scanner scan = new Scanner(System.in); //dalem main, kek file open
+
+    String user =scan.nextLine(); //.nextDouble dkk
+    *System.out.println("Hello"+user);
+    System.out.println(user.hasNextLine); //cek yg di input valid, keluarin bool
+
+///// arr
+    define 
+    int[]num= new int[5];
+    define 2/isi 
+    int[]num={4,6,8,2,9}
+    modify: num[0]=9
+    gaada isi=0
+    System.out.println(num.length); pjg array
+
+    2d: int[][] num2d=new int[2][4];
+    int[][] num2d={{1,2},{1,1}};
+    System.out.println(num[1][1]); pjg array
+
+///// array list 
+    arraylist: //dynamic array, 
+    library: import java.util.ArrayList;
+    ArrayList<String> friend=new ArrayList<String>();
+    friend.add("Lala"); friend ke 0
+    friend.add("Lali"); friend ke 1
+    friend.remove("Lala"); , klo remove, index yg lain maju, jd ga kosong
+
+    System.out.println(friend.toString()); print: [Lala,Lili]
+    System.out.println(friend.get(0)); print index ke-
+    System.out.println(friend.contains("Lala"); bool, cek ad Lala apaga
+    System.out.println(friend.size()); print size
+
+///// method: 
+di main method call func: 
+int sum= addNum(1,2);
+
+public static int addNum(int num1,int num2){
+	return num1+num2;
+}
+
+
+///// condition
+    IF: if(){} 
+    negasi: bool isSmart -> !isSmart
+    string equals(strcmp) if("dog".equals("cat")){}
+
+///// switch case
+    switch(grade){
+        case 'A': sysout; break;
+    }
+
+///// loop
+    while(){}
+    do{}while();
+    for(i=0;i<5;i++){}
+
+    -- foreach
+    int luckyNums[]={3,5,6,8,4};
+    for(int luckyNum : luckyNums){sysout(luckyNum)} //print all array LuckyNums
+
+///// exception handling
+    try,catch,throw
+
+///// oop, class
+    class Book{
+        public String title;
+        public static String ststicatri="myett";
+            // static = belong to book class
+        public void readBook(){
+            sysout("Reading"+this.title+"by"+this.author);
+        }
+    }
+
+    Book book1=new Book(); //new book di class book
+    book1.title="Harry Potter":
+
+    Chef myChef = new Chef ();
+    myChef.makeChicken();
+
+    book1.readBook(); //jalanin fungsi readBook di class book pake book 1 (this nya)
+
+    private (public) cuma class itu.
+
+    -- inheritence
+        cth:
+        class Chef{}
+        // dalem class = public void makeDish(){}
+        class ItalianChef extends Chef{} //dia nge herit atribute dalem class chef
+        // jadi si italian chef bs lakuin function yang dalem chef
+
+        @Override
+        public void makeSpecial(){}
+        //itu kalo si italian chef inherit func makeSpecial dr chef tapi mau di ganti func nya
+
+        //abstract class = dibuat sengaja untuk herit class lain
+        abstract class Vehicle( */ini namanya kelas
+            public abstract void move() //ini di kosongin */ ini namanya attribute
+            // jadi dia itu kek nge buat function kosong buat di herit ke class lain,
+            // dia di kasi guna di func lain
+        }
+
+    -- polymorphism
+        Interface inheritance (polymorphism) 
+
+        interface Animal {
+            public void speak();
+        }
+        class Cat implements Animal {
+            @Override
+            public void speak(){
+                sysout("Miaw");
+            }
+        }
+        // sama kyk inheritance, tp class cat masuk ke data struct animal data type
+        // nah animal nya kan array, liat di main class:
+        public class main{
+            public static void main(String[]args){
+                Animal[]animals={ //create array animal
+                    new Cat(), //creat object cat, tapi tetep masuk ke array animal data type
+                    new Dog()
+                };
+                for(Animal animal : animals){
+                    animal.speak(); jalanin speak ke semua array animals, jadi jalanin cat & dog
+                }
+            }
+        }
