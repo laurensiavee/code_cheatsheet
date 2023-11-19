@@ -10,8 +10,9 @@ add push commit
 branch
 - git branch (cek list branch)
 - git checkout <name> (pindah branch)
-- git switch -c <name> (new branch with all uncommited change)
+- git checkout -b <name> (create new branch)
 - git branch --delete <name>
+- git switch -c <name> (new branch with all uncommited change)
 
 reset
 - git reset HEAD --hard (undo all to last commit)
@@ -27,17 +28,34 @@ PR:
 - git push -u origin <branch name> (upload local branch to remote)
 - create pr di github
 
-git stash - pull rebase
+git stash
 - git add .
 - git stash
-- git pull rebase (sync)
+- git pull
 - git stash apply
 - git add .
 - git commit -m "tes"
 - git push
+
+rebase:
+- git checkout master
+- git pull
+- git checkout <branch>
+- git rebase main (head di branch, previous commit - main)
+- git push 
+- PR if neccessary
+
+merge: main to branch
+- git checkout master
+- git pull
+- git checkout dev 
+- git merge master
 
 cred
 - git config -global user.name testname
 - git config -global user.email testname
 - git config -global user.passwod testname
 - git config --global --unset user.name
+
+refs:
+- https://onlywei.github.io/explain-git-with-d3/
