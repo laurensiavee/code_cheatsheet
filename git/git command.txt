@@ -24,32 +24,31 @@ reset to remote branch:
 log
 - git log --oneline
 
-PR:
+merge to main + PR:
+- merge from main
+- git push, or if no remote branch: 
 - git push -u origin <branch name> (upload local branch to remote)
 - create pr di github
 
 git stash
-- git add .
 - git stash
 - git pull
 - git stash apply
-- git add .
-- git commit -m "tes"
-- git push
 
-rebase:
+rebase, dev to main (make sure already latest (pull)):
 - git checkout master
-- git pull
-- git checkout <branch>
-- git rebase main (head di branch, previous commit - main)
+- git rebase dev
 - git push 
+
+rebase, main to dev (make sure already latest (pull)):
+- git checkout dev
+- git rebase main
+- git push
 - PR if neccessary
 
-merge: main to branch
+merge: dev to main (make sure already latest (pull)):
 - git checkout master
-- git pull
-- git checkout dev 
-- git merge master
+- git merge dev (now head di master)
 
 cred
 - git config -global user.name testname
