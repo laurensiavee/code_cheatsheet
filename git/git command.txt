@@ -7,6 +7,10 @@ add push commit
 - git commit -m "comment"
 - git push
 
+ammend commit 
+- git commit --amend -m "Corrected commit message"
+- git commit --amend --no-edit (to amend commit without change commit message (ex, forgot to add a file, then git add . then amend --no edit))
+
 branch
 - git branch (cek list branch)
 - git checkout <name> (pindah branch)
@@ -24,6 +28,9 @@ reset to remote branch:
 log
 - git log --oneline
 
+revert (back to commit no..)
+- git revert <hash code> 
+
 merge to main + PR:
 - merge from main
 - git push, or if no remote branch: 
@@ -33,7 +40,7 @@ merge to main + PR:
 git stash
 - git stash
 - git pull
-- git stash apply
+- git stash apply (stash can be used from other branch's stashed)
 
 rebase, dev to main (make sure already latest (pull)):
 - git checkout master
@@ -46,9 +53,13 @@ rebase, main to dev (make sure already latest (pull)):
 - git push
 - PR if neccessary
 
-merge: dev to main (make sure already latest (pull)):
+merge, dev to main (make sure already latest (pull)):
 - git checkout master
 - git merge dev (now head di master)
+
+squash merge, dev to main (make sure already latest (pull)):
+- git checkout master
+- git merge --squash dev (now head di master)
 
 cred
 - git config -global user.name testname
@@ -58,3 +69,9 @@ cred
 
 refs:
 - https://onlywei.github.io/explain-git-with-d3/
+- https://ohshitgit.com/
+
+merging notes, rebase vs merge vs squash
+- rebase = rewrite hist to one single timeline
+- merge  = 2 timeline joined in a commit 
+- squash = 1 timeline squashed to the other timeline as a singlr commit 
